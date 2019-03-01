@@ -1,0 +1,6 @@
+framework module MTImage {
+	umbrella header "MTImage-umbrella_macOS.h"
+	
+	export *
+	module * { export * }
+}
