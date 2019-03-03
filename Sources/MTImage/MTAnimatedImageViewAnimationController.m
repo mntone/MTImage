@@ -76,6 +76,10 @@ static CVReturn renderCallback(CVDisplayLinkRef displayLink,
 - (void)dealloc
 {
 	[self invalidate];
+#if !TARGET_OS_IPHONE
+	CVDisplayLinkSetOutputCallback(_displayLink, nil, nil);
+	CVDisplayLinkRelease(_displayLink);
+#endif
 }
 
 - (void)reset
